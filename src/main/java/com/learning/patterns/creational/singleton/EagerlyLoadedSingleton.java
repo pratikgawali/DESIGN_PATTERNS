@@ -1,40 +1,40 @@
 package com.learning.patterns.creational.singleton;
 
 /**
- * Demonstrates lazy loaded implementation of singleton design pattern.
+ * Demonstrates eagerly loaded implementation of singleton design pattern.
  * 
  * @author I341876
- *
  */
-public class DbLazyLoadedSingleton {
+public class EagerlyLoadedSingleton {
 
-	private static DbLazyLoadedSingleton instance = null;
+	private static EagerlyLoadedSingleton instance = new EagerlyLoadedSingleton();
 
 	/**
 	 * Private constructor to restrict instantiation
 	 */
-	private DbLazyLoadedSingleton() {
+	private EagerlyLoadedSingleton() {
 	}
 
 	/**
-	 * Gets the singleton instance of {@link DbLazyLoadedSingleton}
+	 * Gets the singleton instance of {@link EagerlyLoadedSingleton}
 	 * 
 	 * @return the singleton instance
 	 */
-	public static DbLazyLoadedSingleton getInstance() {
-		return instance == null ? instance = new DbLazyLoadedSingleton() : instance;
+	public static EagerlyLoadedSingleton getInstance() {
+		return instance;
 	}
-}
 
+}
 
 /*
  *----------------------------------------------------------------------------------------------------------------
  * PROs: 
  * ------
- * 		1. Instantiation only when needed (ideal when instance creation is expensive and rare)
+ * 		1. Thread Safe (Class loading by JVM is thread safe)
  * ----------------------------------------------------------------------------------------------------------------
  * CONs: 
  * ------
- * 		1. Not thread safe
+ * 		1. Unnecessary instantiation of singleton when instance creation is very expensive
+ * 		   operation and it is uncertain whether the instance would be used at all.
  * ----------------------------------------------------------------------------------------------------------------
  */

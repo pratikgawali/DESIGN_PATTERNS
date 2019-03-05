@@ -5,24 +5,24 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * Test class for {@link DbEagerlyLoadedSingleton}
+ * Test class for {@link EagerlyLoadedSingleton}
  * 
  * @author I341876
  *
  */
-public class DbEagerlyLoadedSingletonTest {
+public class EagerlyLoadedSingletonTest {
 
 	/**
-	 * Test for {@link DbEagerlyLoadedSingleton#getInstance() getInstance()} to check
+	 * Test for {@link EagerlyLoadedSingleton#getInstance() getInstance()} to check
 	 * if same instance is returned which was created for the first time.
 	 */
 	@Test
 	public void getInstanceTest() {
 
-		DbEagerlyLoadedSingleton instance = DbEagerlyLoadedSingleton.getInstance();
+		EagerlyLoadedSingleton instance = EagerlyLoadedSingleton.getInstance();
 
 		assertEquals("Must return the same instance which was created the first time", instance,
-				DbEagerlyLoadedSingleton.getInstance());
+				EagerlyLoadedSingleton.getInstance());
 	}
 
 }
