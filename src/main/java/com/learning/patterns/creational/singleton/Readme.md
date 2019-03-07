@@ -1,3 +1,4 @@
+
 # SINGLETON DESIGN PATTERN
 
 ## EARLY LOADED SINGLETON
@@ -26,3 +27,12 @@ As a result faster application start up compared to eagerly loaded singleton pat
 
 ### CONs:
   1. It does not work reliably in a platform-independent manner without additional synchronization for mutable instances of anything other than float or int.
+
+## BILL PUGH SINGLETON
+
+### PROs:
+1. Lazy loading as static inner class are loaded only when they are referenced
+2. Thread safe (Class loading by JVM is thread safe)
+
+### CONs:
+1. Can be destroyed via Reflection APIs
