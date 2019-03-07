@@ -23,18 +23,4 @@ public class EagerlyLoadedSingleton {
 	public static EagerlyLoadedSingleton getInstance() {
 		return instance;
 	}
-
 }
-
-/*
- *----------------------------------------------------------------------------------------------------------------
- * PROs: 
- * ------
- * 		1. Thread Safe (Class loading by JVM is thread safe)
- * ----------------------------------------------------------------------------------------------------------------
- * CONs: 
- * ------
- * 		1. Unnecessary instantiation of singleton when instance creation is very expensive
- * 		   operation and it is uncertain whether the instance would be used at all.
- * ----------------------------------------------------------------------------------------------------------------
- */
